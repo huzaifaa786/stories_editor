@@ -39,6 +39,7 @@ class MainView extends StatefulWidget {
   final String title;
   final String discard;
   final String cancel;
+  final String discardEdit;
 
   /// editor custom color gradients
   final List<List<Color>>? gradientColors;
@@ -69,6 +70,7 @@ class MainView extends StatefulWidget {
       required this.onDone,
       required this.title,
       required this.discard,
+      required this.discardEdit,
       required this.cancel,
       this.middleBottomWidget,
       this.colorList,
@@ -328,6 +330,8 @@ class _MainViewState extends State<MainView> {
                                   cancel: widget.cancel,
                                   discard: widget.discard,
                                   title: widget.title,
+                                  discardEdit: widget.discardEdit,
+
                                 )),
                           ),
 
@@ -458,6 +462,7 @@ class _MainViewState extends State<MainView> {
             cancel: widget.cancel,
             discard: widget.discard,
             title: widget.title,
+            editDiscard:  widget.discardEdit,
           );
     }
     return false;

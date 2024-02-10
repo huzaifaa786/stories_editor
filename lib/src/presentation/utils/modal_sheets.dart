@@ -42,6 +42,7 @@ Future<bool> exitDialog(
     {required context,
     required contentKey,
     required title,
+    required editDiscard,
     required cancel,
     required discard}) async {
   return (await showDialog(
@@ -73,9 +74,10 @@ Future<bool> exitDialog(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const Text(
-                    'Discard Edits?',
-                    style: TextStyle(
+                  Text(
+                    // 'Discard Edits?',
+                    '$editDiscard',
+                    style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,

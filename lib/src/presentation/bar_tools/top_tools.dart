@@ -16,12 +16,14 @@ class TopTools extends StatefulWidget {
   final String? title;
   final String? discard;
   final String? cancel;
+  final String? discardEdit;
   const TopTools(
       {Key? key,
       required this.contentKey,
       required this.context,
       this.title,
       this.discard,
+      this.discardEdit,
       this.cancel})
       : super(key: key);
 
@@ -57,6 +59,7 @@ class _TopToolsState extends State<TopTools> {
                         cancel: widget.cancel,
                         discard: widget.discard,
                         title: widget.title,
+                        editDiscard: widget.discardEdit
                       );
                       if (res) {
                         Navigator.pop(context);

@@ -26,6 +26,7 @@ class StoriesEditor extends StatefulWidget {
   final String giphyKey;
   final String title;
   final String discard;
+  final String discardEdit;
   final String cancel;
 
   /// editor custom color gradients
@@ -59,6 +60,7 @@ class StoriesEditor extends StatefulWidget {
       required this.title,
       required this.cancel,
       required this.discard,
+      required this.discardEdit,
       this.middleBottomWidget,
       this.colorList,
       this.gradientColors,
@@ -116,6 +118,7 @@ class _StoriesEditorState extends State<StoriesEditor> {
             title: widget.title,
             discard: widget.discard,
             cancel: widget.cancel,
+            discardEdit: widget.discardEdit,
             giphyKey: widget.giphyKey,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,
