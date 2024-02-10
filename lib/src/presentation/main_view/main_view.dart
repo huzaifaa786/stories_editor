@@ -325,6 +325,9 @@ class _MainViewState extends State<MainView> {
                                 child: TopTools(
                                   contentKey: contentKey,
                                   context: context,
+                                  cancel: widget.cancel,
+                                  discard: widget.discard,
+                                  title: widget.title,
                                 )),
                           ),
 
