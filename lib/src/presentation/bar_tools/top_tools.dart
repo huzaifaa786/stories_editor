@@ -44,7 +44,7 @@ class _TopToolsState extends State<TopTools> {
                     onTap: () async {
                       var res = await exitDialog(
                           context: widget.context,
-                          contentKey: widget.contentKey);
+                          contentKey: widget.contentKey,cancel: '',discard: '',title: '');
                       if (res) {
                         Navigator.pop(context);
                       }

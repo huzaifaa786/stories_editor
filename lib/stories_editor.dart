@@ -24,6 +24,9 @@ class StoriesEditor extends StatefulWidget {
 
   /// giphy api key
   final String giphyKey;
+  final String title;
+  final String discard;
+  final String cancel;
 
   /// editor custom color gradients
   final List<List<Color>>? gradientColors;
@@ -53,6 +56,9 @@ class StoriesEditor extends StatefulWidget {
       {Key? key,
       required this.giphyKey,
       required this.onDone,
+      required this.title,
+      required this.cancel,
+      required this.discard,
       this.middleBottomWidget,
       this.colorList,
       this.gradientColors,
@@ -107,6 +113,9 @@ class _StoriesEditorState extends State<StoriesEditor> {
             ChangeNotifierProvider(create: (_) => TextEditingNotifier()),
           ],
           child: MainView(
+            title: widget.title,
+            discard: widget.discard,
+            cancel: widget.cancel,
             giphyKey: widget.giphyKey,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,

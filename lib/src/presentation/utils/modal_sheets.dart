@@ -38,7 +38,12 @@ Future createGiphyItem(
 }
 
 /// custom exit dialog
-Future<bool> exitDialog({required context, required contentKey}) async {
+Future<bool> exitDialog(
+    {required context,
+    required contentKey,
+    required title,
+    required cancel,
+    required discard}) async {
   return (await showDialog(
         context: context,
         barrierColor: Colors.black38,
@@ -79,9 +84,10 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "If you go back now, you'll lose all the edits you've made.",
-                    style: TextStyle(
+                  Text(
+                    // "If you go back now, you'll lose all the edits you've made.",
+                    '$title',
+                    style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.white54,
@@ -99,7 +105,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
-                      'Discard',
+                      // 'Discard',
+                      '$discard',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -120,9 +127,10 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     onTap: () {
                       Navigator.of(context).pop(false);
                     },
-                    child: const Text(
-                      'Cancel',
-                      style: TextStyle(
+                    child: Text(
+                      // 'Cancel',
+                      '$cancel',
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

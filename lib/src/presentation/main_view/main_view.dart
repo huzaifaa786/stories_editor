@@ -36,6 +36,9 @@ class MainView extends StatefulWidget {
 
   /// giphy api key
   final String giphyKey;
+  final String title;
+  final String discard;
+  final String cancel;
 
   /// editor custom color gradients
   final List<List<Color>>? gradientColors;
@@ -64,6 +67,9 @@ class MainView extends StatefulWidget {
       {Key? key,
       required this.giphyKey,
       required this.onDone,
+      required this.title,
+      required this.discard,
+      required this.cancel,
       this.middleBottomWidget,
       this.colorList,
       this.isCustomFontList,
@@ -443,7 +449,13 @@ class _MainViewState extends State<MainView> {
     /// show close dialog
     else if (!controlNotifier.isTextEditing && !controlNotifier.isPainting) {
       return widget.onBackPress ??
-          exitDialog(context: context, contentKey: contentKey);
+          exitDialog(
+            context: context,
+            contentKey: contentKey,
+            cancel: widget.cancel,
+            discard: widget.discard,
+            title: widget.title,
+          );
     }
     return false;
   }
