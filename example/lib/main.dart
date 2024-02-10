@@ -43,7 +43,7 @@ class _ExampleState extends State<Example> {
                       builder: (context) => StoriesEditor(
                             title: '',
                             cancel: '',
-                            discard: '',
+                            discard: '',discardEdit: '',
                             giphyKey: 'C4dMA7Q19nqEGdpfj82T8ssbOeZIylD4',
                             //fontFamilyList: const ['Shizuru', 'Aladin'],
                             galleryThumbnailQuality: 300,
